@@ -26,7 +26,7 @@ export default function Section({
       
       setActiveNav(id)
     }
-  },[isInView])
+  },[isInView,setActiveNav])
   
   return (
       <section 

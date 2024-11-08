@@ -17,7 +17,6 @@ export default function ProjectNav({
   
   
  const {contextSafe} = useGSAP(()=>{
- 
     gsap.to(".projectNavIndicator",{
       x:`${position}rem`,
       duration:1,
@@ -40,7 +39,7 @@ export default function ProjectNav({
       stagger: 0.1,
     });
     
-  },[])
+  },[setActiveNav])
   
   return (
       <div className="projectNav opacity-0 scale-[0.6] relative bg-backgroundMild shadow-lg rounded-full overflow-hidden w-[20rem] mx-auto">

@@ -34,7 +34,7 @@ export default function Counter({
     }, 2000);
 
     return () => clearTimeout(timeId);
-  }, []);
+  }, [start]);
   
  
   return (

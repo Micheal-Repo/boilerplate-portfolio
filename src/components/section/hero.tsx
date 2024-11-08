@@ -20,14 +20,14 @@ export default function Hero() {
         {/*left*/}
         <div className="md:w-[55%] w-full flex flex-col gap-6 md:items-start items-center max-md:text-center">
           <p className="opacity-0 hero-intro lg:text-[1.5rem] flex items-center gap-2 font-sans">
-            <span>Hello dear! I'm</span>
+            <span>Hello dear! I&apos;m</span>
             <span className="text-gradient uppercase font-semibold">
               Eqwin Chosen
             </span>
           </p>
 
           <h1 className="opacity-0  scale-[2] text-hero text-gradient  uppercase font-bold font-sans lg:text-[4rem] text-[2.5rem] md:text-[3.5rem]">
-            I'm a web Developer
+            I&apos;m a web Developer
           </h1>
 
           <p className="relative translate-y-[1rem] hero-desc max-w-[40rem]  text-foreground opacity-0">
