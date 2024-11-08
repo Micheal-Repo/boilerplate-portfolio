@@ -23,13 +23,13 @@ export default function ProjectNav({
       duration:1,
       ease:"back.inOut"
     })
+    
+    ScrollTrigger.refresh();
   },{dependencies:[position]})
   
   
   
   const handleNavClick=useCallback((nav:string,pos: number)=>{
-    
-    ScrollTrigger.refresh();
     
     const state = Flip.getState(".project-card")
     
