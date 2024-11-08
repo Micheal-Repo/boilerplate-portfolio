@@ -45,7 +45,7 @@ export default function IntroAnimatiom() {
       opacity:1,
       scale:1,
       duration:2,
-      ease:"back.inOut"
+      ease:"slow(0.6,0.8)"
     })
     tl.to(".hero-desc",{
       opacity:0.6,
@@ -86,7 +86,7 @@ export default function IntroAnimatiom() {
     <div className="text-anime w-screen h-screen absolute z-30 flex justify-center items-center top-0 left-0 ">
       {Texts.map((item, i) => (
         <h1 key={i}
-          className={`absolute md:text-[2rem] lg:text-[2.6rem] text-[1.5rem] font-medium font-sans text-foreground scale-0 text-${i} `}
+          className={`absolute md:text-[2rem] lg:text-[2.6rem] text-[1.5rem] font-semibold font-sans text-foreground scale-0 text-${i} `}
         >
           {item.text}
         </h1>

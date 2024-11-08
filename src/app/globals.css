@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --gradient: linear-gradient(90deg,hsla(78, 84%, 20%, 1) 0%,hsla(48, 70%, 58%, 1) 100%);
+    --primary-color: hsla(48, 70%, 50%, 1);
     --background: 0 0% 95%;
     --background-mild: 0 0% 100%;
     --foreground: 0 0% 0%;
@@ -11,7 +13,6 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -34,6 +35,7 @@
 
 
   .dark {
+   --gradient: linear-gradient(90deg,hsla(78, 84%, 20%, 1) 0%,hsla(48, 70%, 58%, 1) 100%);
     --background:312, 83%, 2%;
     --background-mild: 312, 83%, 8%;
     --foreground: 0, 0%, 100%;
@@ -41,7 +43,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
+    --primary-color: hsla(48, 70%, 50%, 1);
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -76,11 +78,11 @@
  }
  
  .main{
-   @apply w-screen md:px-6 lg:px-8 px-3
+   @apply w-screen overflow-x-hidden md:px-8 px-4
  }
  
  .section{
-   @apply py-[3rem]
+   @apply py-[3rem] md:py-[3.7rem] overflow-hidden
  }
  
  .wrapper{
@@ -89,11 +91,11 @@
   
 
 .bg-gradient{
-background: linear-gradient(90deg,hsla(78, 84%, 25%, 1) 0%,hsla(48, 70%, 51%, 1) 100%);
+background: var(--gradient);
 }
 
 .text-gradient{
-  background: linear-gradient(90deg,hsla(78, 84%, 25%, 1) 0%,hsla(48, 70%, 51%, 1) 100%);
+  background: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text; 
   color: transparent;
@@ -101,7 +103,7 @@ background: linear-gradient(90deg,hsla(78, 84%, 25%, 1) 0%,hsla(48, 70%, 51%, 1)
 }
 
 .border-gradient {
-  border-image: linear-gradient(90deg,hsla(78, 84%, 25%, 1) 0%,hsla(48, 70%, 51%, 1) 100%);
+  border-image: var(--gradient);
   border-image-slice: 1;
   @apply border-solid border-transparent 
 }
@@ -109,17 +111,29 @@ background: linear-gradient(90deg,hsla(78, 84%, 25%, 1) 0%,hsla(48, 70%, 51%, 1)
 
 
 .text-shadow{
-  text-shadow: 0px 0px 2rem hsla(48, 70%, 51%, 0.65); /* Adjust shadow as needed */
+  text-shadow: 0px 0px 2rem var(--primary-color); /* Adjust shadow as needed */
 }
 
 .text-sm{
   @apply text-[1.1rem]
 }
 
-.text-dim{
-  @apply text-[hsla(0,0%,100%,0.6)] dark:text-[hsla(0,0%,0%,0.6)]
-}
-
 .text-opacity{
   @apply opacity-60
+}
+
+.text-desc{
+  @apply text-[0.9rem] md:text-[1.3rem]
+}
+
+.blur-background {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+}
+
+
+.hover-border-gradient:hover{
+  border-image: var(--gradient);
+  border-image-slice: 1;
+  @apply border-solid border-transparent 
 }

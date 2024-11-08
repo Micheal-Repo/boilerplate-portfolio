@@ -1,30 +1,18 @@
-"use client";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { useState, useEffect } from "react";
+
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
 import {
    GridBackground,
    Counter,
    BtnPlain,
+  Section,
   IntroAnimation
 } from "@/components";
-import {intersectSection} from "@/lib/intersectionObserver"
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
- 
- 
- useEffect(()=>{
-   intersectSection()
- },[])
- 
- 
+
   return (
-    <section id="home" className="overflow-hidden main section bg-background relative ">
+    <Section id="home">
       <GridBackground />
       <IntroAnimation />
       
@@ -43,7 +31,7 @@ export default function Hero() {
             I'm a web Developer
           </h1>
 
-          <p className="relative translate-y-[1rem] hero-desc lg:text-[1.5rem] max-w-[40rem]  text-foreground opacity-0">
+          <p className="relative translate-y-[1rem] hero-desc max-w-[40rem]  text-foreground opacity-0">
             I dissect intricate User experience challenges to engineer integrity
             focused solutions that resonant with billions of user
           </p>
@@ -102,6 +90,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

@@ -4,15 +4,13 @@ export function intersectSection() {
   
   // Select all sections and nav links
   const sections = document.querySelectorAll(".section");
-  const navLinks = document.querySelectorAll(".linkMarker");
-  const navMarker = document.querySelectorAll(".navMarker");
-  const sidemarker = document.querySelectorAll(".marker");
+  const navLinks = document.querySelectorAll(".navMarker");
+  const sideLinks = document.querySelectorAll(".marker");
 
   // Function to remove active class from all nav links
   const removeActiveClass = () => {
     navLinks.forEach((link: any) => link.style.width = 0);
-    
-    
+    sideLinks.forEach((link: any) => link.style.width = 0);
   };
 
   // Callback function for Intersection Observer
@@ -25,19 +23,23 @@ export function intersectSection() {
         removeActiveClass();
 
         // Get the link corresponding to the section in view and add the active class
-      const link = document.querySelectorAll(`.${entry.target.id}`);
+      const navLink :any = document.querySelector(`#nav-${entry.target.id}`);
+      const sideLink :any = document.querySelector(`#side-${entry.target.id}`);
       
-      link.forEach((item:any)=>{
-         item.style.width = "100%";
-      })
+      alert(entry.target.id)
+      alert(sideLink.id)
+      alert(navLink.id)
       
+      sideLink.style.width="100%"
+      navLink.style.width="100%"
+     
       }
     });
   };
 
   // Options for the observer to trigger when the section is fully in view at the top
   const options = {
-    threshold:0.8,
+    threshold:0.6,
     rootMargin:"0px 0px 0px 0px"
   };
 

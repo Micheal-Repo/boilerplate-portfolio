@@ -4,10 +4,12 @@ import NavBar from "./section/navbar"
 import SideBar from "./section/sideBar"
 import Hero from "./section/hero"
 import About from "./section/about"
+import Services from "./section/services"
 import Skill from "./section/skill"
 import Projects from "./section/projects"
-import Testimonial from "./section/testimonial"
+import Testimonials from "./section/testimonial"
 import Contact from "./section/contact"
+import Footer from "./section/footer"
 
 
 //ui
@@ -21,6 +23,17 @@ import {GridBackground} from "./ui/GridBg"
 import Counter from "./ui/counter"
 import BtnPlain from "./ui/btnPlain"
 import IntroAnimation from "./ui/introAnimation"
+import AboutImage from "./ui/about-img"
+import SectionTitle from "./ui/section-title"
+import Service from "./ui/service"
+import SkillSet from "./ui/skillSet"
+import ProjectNav from "./ui/projectNav"
+import Project from "./ui/Project"
+import Testimonial from "./ui/testimonial"
+import Section from "./ui/section"
+import {Theme,ThemeHandler} from "./ui/theme"
+
+
 
 export{
   //section
@@ -28,11 +41,12 @@ export{
   SideBar,
   Hero,
   About,
+  Services,
   Skill,
   Projects,
-  Testimonial,
+  Testimonials,
   Contact,
-  
+  Footer,
   
   //ui 
   ModeToggle,
@@ -44,5 +58,15 @@ export{
   GridBackground,
   Counter,
   BtnPlain,
-  IntroAnimation
+  IntroAnimation,
+  AboutImage,
+  SectionTitle,
+  Service,
+  SkillSet,
+  ProjectNav,
+  Project,
+  Testimonial,
+  Section,
+  Theme,
+  ThemeHandler
 }

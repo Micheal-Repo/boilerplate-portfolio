@@ -9,6 +9,7 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -40,14 +41,11 @@ const config = {
   			ring: 'hsl(var(--ring))',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+  			primary: 'var(--primary-color)',
   			backgroundMild: 'hsl(var(--background-mild))',
   			'gradient': {
           DEFAULT: 'linear-gradient(90deg, hsla(91, 77%, 23%, 1) 0%, hsla(91, 71%, 64%, 1) 100%)',
         },
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
   				foreground: 'hsl(var(--secondary-foreground))'
@@ -94,6 +92,11 @@ const config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		keyframes: {
+  		  scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
   			'accordion-down': {
   				from: {
   					height: '0'
@@ -112,6 +115,8 @@ const config = {
   			}
   		},
   		animation: {
+  		  scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
@@ -159,3 +164,4 @@ function addVariablesForColors({ addBase, theme }: any) {
 
 
 export default config
+

@@ -1,12 +1,15 @@
 import {
   NavBar,
   SideBar,
-    Hero,
+  Hero,
   About,
+  Services,
   Skill,
   Projects,
-  Testimonial,
-  Contact
+  Testimonials,
+  Contact,
+  Footer,
+  Theme
 } from "@/components"
 
 export default function Home(){
@@ -16,10 +19,13 @@ export default function Home(){
         <NavBar/>
         <Hero/>
         <About/>
+        <Services/>
         <Skill/>
         <Projects/>
-        <Testimonial/>
+        <Testimonials/>
         <Contact/>
+        <Footer/>
+        <Theme/>
       </main>
     )
 }

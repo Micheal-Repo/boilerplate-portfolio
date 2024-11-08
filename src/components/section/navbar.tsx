@@ -4,7 +4,8 @@ import  {
   Button,
   Logo,
   NavLink,
-  MenuToggle
+  MenuToggle,
+  ThemeHandler
 } from "@/components"
 import {
   navLinks, 
@@ -12,7 +13,6 @@ import {
 } from "@/lib/data"
 import {useEffect} from "react"
 import { Send } from 'lucide-react';
-
 
   
 export default function NavBar(){
@@ -58,7 +58,7 @@ export default function NavBar(){
           
           
           {/*Action*/}
-           <div className="flex items-center gap-6">
+           <div className="flex items-center gap-4">
              <Button
                icon={<Send />}
                iconPosition="right"
@@ -68,6 +68,7 @@ export default function NavBar(){
              </Button>
              
               <ModeToggle/>
+              <ThemeHandler/>
               <MenuToggle/>
            </div>
           {/*Action*/}

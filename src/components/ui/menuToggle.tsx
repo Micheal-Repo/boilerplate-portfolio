@@ -87,12 +87,12 @@ export default function MenuToggle() {
   return (
     <div
       ref={container}
-      className="md:hidden initialCont w-[3.5rem] h-[3rem] flex justify-center items-center "
+      className="md:hidden initialCont w-[3rem] h-[3rem] flex justify-center items-center "
     >
       {isReady && (
         <div
           onClick={handleMenu}
-          className="cursor-pointer transition-all duration-300 menu w-[3.5rem] h-[3rem] border border-background rounded-lg flex justify-center items-center relative overflow-hidden"
+          className="cursor-pointer transition-all duration-300 menu w-[3rem] h-[3rem] border border-background rounded-lg flex justify-center items-center relative overflow-hidden"
         >
           {!isOpen2 && <RiMenu3Fill className="open absolute" size={28} />}
           {isOpen2 && <IoMdClose className="close absolute" size={28} />}
