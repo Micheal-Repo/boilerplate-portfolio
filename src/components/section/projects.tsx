@@ -31,7 +31,7 @@ export default function Sevices() {
       duration: 2,
       ease: "back.inOut",
     });
-    tl.to(".project-card", {
+    tl.to(".project-grid", {
       opacity: 1,
       duration: 2,
     });
@@ -49,7 +49,8 @@ export default function Sevices() {
         <ProjectNav activeNav={activeNav} setActiveNav={setActiveNav} />
 
         {/*body*/}
-        <div className="project-card opacity-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-[2rem]">
+        <div className="opacity-0 project-grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mt-[2rem]">
           {projects.map((item: projectType, i: number) => {
             if (activeNav === "All") {
               return <Project key={i} data={item} />;
@@ -57,6 +58,7 @@ export default function Sevices() {
               return <Project key={i} data={item} />;
             }
           })}
+        </div>
         </div>
       </div>
     </Section>
