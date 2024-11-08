@@ -32,6 +32,7 @@ import Project from "./ui/Project"
 import Testimonial from "./ui/testimonial"
 import Section from "./ui/section"
 import {Theme,ThemeHandler} from "./ui/theme"
+import ScrollTop from "./ui/scrollTop"
 
 
 
@@ -68,5 +69,6 @@ export{
   Testimonial,
   Section,
   Theme,
-  ThemeHandler
+  ThemeHandler,
+  ScrollTop
 }

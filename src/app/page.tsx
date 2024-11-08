@@ -9,13 +9,15 @@ import {
   Testimonials,
   Contact,
   Footer,
-  Theme
+  Theme,
+  ScrollTop
 } from "@/components"
 
 export default function Home(){
   return (
+    <>
+    
       <main className="pageContainer w-screen h-[100svh] bg-background ">
-        <SideBar/>
         <NavBar/>
         <Hero/>
         <About/>
@@ -26,6 +28,9 @@ export default function Home(){
         <Contact/>
         <Footer/>
         <Theme/>
+        <SideBar/>
+        <ScrollTop/>
       </main>
+    </>
     )
 }

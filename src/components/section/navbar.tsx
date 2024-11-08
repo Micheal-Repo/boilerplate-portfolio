@@ -13,9 +13,14 @@ import {
 } from "@/lib/data"
 import {useEffect} from "react"
 import { Send } from 'lucide-react';
+import {useScroll,motion,useSpring} from "framer-motion" 
 
   
 export default function NavBar(){
+  const {scrollYProgress} = useScroll()
+  const scaleX = useSpring(scrollYProgress)
+  
+  
   
   useEffect(()=>{
     const Links = document.querySelectorAll(".navBarLink")
@@ -42,7 +47,12 @@ export default function NavBar(){
 
   return (
       <nav className="z-20 fixed top-0 main bg-backgroundMild shadow-lg">
-     
+       
+       <motion.div 
+         className="absolute left-0 h-1 bottom-0 z-20  rounded-full bg-gradient w-full origin-left shadow-lg shadow-primary "
+         style={{scaleX}}
+       />
+       
         <div className="wrapper flex justify-between items-center py-4 max-md:py-3">
           <Logo/>
           
@@ -77,3 +87,15 @@ export default function NavBar(){
       </nav>
     )
 }
+
+
+
+
+
+
+
+
+// const { scrollYProgress } = useScroll()
+// const scaleX = useSpring(scrollYProgress)
+
+// return <motion.div style={{ scaleX }} />

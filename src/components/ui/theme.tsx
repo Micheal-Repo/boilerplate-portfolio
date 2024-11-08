@@ -36,22 +36,22 @@ export function Theme() {
     },
     {
       name:"color-2",
-      color: "linear-gradient(90deg, hsla(185, 64%, 51%, 1) 0%, hsla(277, 74%, 24%, 1) 100%)",
-      linear:"hsla(277, 74%, 24%, 1)"
+      color: "linear-gradient(90deg, hsla(277, 74%, 24%, 1) 0%, hsla(185, 64%, 51%, 1) 100%)",
+      linear:"hsla(185, 64%, 51%, 1)"
     },
     {
       name:"color-3",
-      color: "linear-gradient(90deg, hsla(323, 91%, 51%, 1) 0%, hsla(329, 20%, 24%, 1) 100%)",
-      linear:"hsla(329, 20%, 24%, 1)"
+      color: "linear-gradient(90deg, hsla(329, 20%, 24%, 1) 0%, hsla(323, 91%, 51%, 1) 100%)",
+      linear:"hsla(323, 91%, 51%, 1)"
     },
     {
       name:"color-4",
-      color: "linear-gradient(90deg, hsla(239, 94%, 14%, 1) 0%, hsla(190, 68%, 50%, 1) 100%)",
-      linear:"hsla(190, 68%, 50%, 1)"
+      color: "linear-gradient(90deg, hsla(307, 70%, 28%, 1) 0%, hsla(321, 62%, 76%, 1) 100%)",
+      linear:"hsla(321, 62%, 76%, 1)"
     },
     {
       name:"color-5",
-      color: "linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(213, 51%, 71%, 1) 100%)",
+      color: "linear-gradient(90deg,hsla(202, 71%, 27%, 1)  0%,   hsla(213, 51%, 71%, 1) 100%)",
       linear:"hsla(213, 51%, 71%, 1)"
     },
     {
@@ -76,16 +76,23 @@ export function Theme() {
 
 function updateTheme(theme:any){
   setThemes(theme.name)
-  let light:any = document.documentElement
-  let dark:any = document.querySelector(".dark")
   
-  light.style.setProperty('--primary-color', theme.linear);
+   let light:any = document.documentElement
+   let dark: any = document.querySelector(".dark")
+ 
+ if(light){
+   light.style.setProperty('--primary-color', theme.linear);
   
   light.style.setProperty('--gradient', theme.color);
-      
+ }
+  
+ 
+ if(dark){
    dark.style.setProperty('--primary-color', theme.linear);
+   
+  dark.style.setProperty('--gradient', theme.color);
+ }
     
-   dark.style.setProperty('--gradient', theme.color);
 }
 
 
@@ -97,7 +104,7 @@ function updateTheme(theme:any){
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{
-            duration: 1,
+            duration: 0.8,
           }}
           className="z-40 fixed bg-black/[0.6] inset-0 flex justify-center items-center"
         >
@@ -106,7 +113,7 @@ function updateTheme(theme:any){
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
             transition={{
-              duration: 2,
+              duration: 1,
               type: "spring",
             }}
             className="w-[90%] mx-auto max-w-xl rounded-2xl bg-backgroundMild shadow-lg"
@@ -118,11 +125,11 @@ function updateTheme(theme:any){
               <IoMdClose onClick={handleClick} size={30} />
             </div>
 
-            <h1 className="uppercase text-center my-4 text-[3rem] font-bold text-gradient">
-              Primary-Color {themes}
+            <h1 className="uppercase text-center my-4 text-[2.5rem] md:text-[3rem] font-bold text-gradient">
+                Wonderful
             </h1>
 
-            <div className="w-full py-[3rem] px-[2rem] flex gap-8 justify-center flex-wrap items-center">
+            <div className="w-full md:pb-[3rem] pb-[2rem]  px-[2rem] flex gap-8 justify-center flex-wrap items-center">
               {colors.map((item, i) => (
                 <div onClick={()=> handleChangeColor(item)} key={i} className={`w-[5rem] h-[5rem] rounded-full p-1 hover:border-primary border  transition-all duration-300 ${themes === item.name ? "border-primary" : "border-backgroundMild"}`}>
                   <div
@@ -155,7 +162,14 @@ export function ThemeHandler() {
       onClick={handleClick}
       className="cursor-pointer transition-all duration-300 w-[2.5rem] h-[2.5rem] border border-background rounded-lg flex justify-center items-center relative overflow-hidden text-foreground bg-background"
     >
-      <IoIosColorPalette />
+      <IoIosColorPalette size={28}/>
     </div>
   );
 }
+
+
+
+
+
+
+

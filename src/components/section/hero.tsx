@@ -16,7 +16,6 @@ export default function Hero() {
       <GridBackground />
       <IntroAnimation />
       
-
       <div className="relative z-10 mt-[8rem] wrapper flex md:items-center flex-col md:flex-row md:justify-between ">
         {/*left*/}
         <div className="md:w-[55%] w-full flex flex-col gap-6 md:items-start items-center max-md:text-center">
@@ -27,7 +26,7 @@ export default function Hero() {
             </span>
           </p>
 
-          <h1 className="opacity-0  scale-[2] text-hero text-gradient  text-shadow uppercase font-bold font-sans lg:text-[4rem] text-[2.5rem] md:text-[3.5rem]">
+          <h1 className="opacity-0  scale-[2] text-hero text-gradient  uppercase font-bold font-sans lg:text-[4rem] text-[2.5rem] md:text-[3.5rem]">
             I'm a web Developer
           </h1>
 
