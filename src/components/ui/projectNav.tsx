@@ -4,6 +4,7 @@ import {useGSAP} from "@gsap/react"
 import {useState} from "react"
 import { Flip } from "gsap/Flip";
 import {useCallback} from "react"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function ProjectNav({
   activeNav,
@@ -27,6 +28,8 @@ export default function ProjectNav({
   
   
   const handleNavClick=useCallback((nav:string,pos: number)=>{
+    
+    ScrollTrigger.refresh();
     
     const state = Flip.getState(".project-card")
     
