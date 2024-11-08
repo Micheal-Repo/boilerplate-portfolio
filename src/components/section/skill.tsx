@@ -16,7 +16,7 @@ export default function Sevices() {
  useGSAP(()=>{
   const tl= gsap.timeline({
         scrollTrigger:{
-          trigger:`#skills`,
+          trigger:`#skill`,
           start:"top center",
         }
   })

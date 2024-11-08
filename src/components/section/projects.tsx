@@ -14,7 +14,7 @@ export default function Sevices() {
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: `#projects`,
+        trigger: `#project`,
         start: "top center",
       },
     });
